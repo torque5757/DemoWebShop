@@ -1,0 +1,17 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Parallel Testing" parallel="tests">
+	<listeners>
+		<listener class-name="com.demowebshop.listeners.TestListener"/>
+	</listeners>
+  <test thread-count="2" name="Functional Test">
+	  <parameter name="browser" value="chrome"/>
+	  <classes>
+		  <class name="com.demowebshop.testscript.HomeTest">
+			  <methods>
+			<include name="tc_001_verifySubcribeEmailMessage"/>	  
+			  </methods>  
+		  </class>
+	  </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
